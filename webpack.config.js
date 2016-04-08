@@ -14,6 +14,10 @@ module.exports = {
     filename: "bundle.js"
   },
 
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.ts', '.scss']
+  },
+
   devtool: 'eval-source-map',
 
   devServer: {
@@ -46,11 +50,7 @@ module.exports = {
         include: [
           __appDir
         ],
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: ['transform-runtime']
-        }
+        loader: 'ts-loader'
       }
     ]
   }

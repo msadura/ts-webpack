@@ -1,4 +1,3 @@
-require('./config.ts');
-require('./style.scss');
+require('./style');
 
-module.exports = "It works from content.js, in it?";
+import {Config} from './config';

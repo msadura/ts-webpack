@@ -1,16 +1,3 @@
-require('./config.ts');
-require('./style.scss');
+require('./style');
 
-
-module.exports = (function(){
-
-  function log() {
- console.info('modules/main/module.ts');
-  }
-
-  return {
-    log: log
-  }
-
-})();
-
+import {Config} from './config';
