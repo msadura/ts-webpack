@@ -7,6 +7,13 @@ import {FeatureFactory} from "./FeatureFactory";
 
 
 export class ES6featuresDescriptor {
+  features: string[] = [
+    'Constants',
+    'Scoping',
+    'ArrowFunctions',
+    'ExtendedParameterHandling',
+    'TemplateLiterals'
+  ]
   factory: FeatureFactory
 
   constructor(factory: FeatureFactory) {
@@ -14,10 +21,9 @@ export class ES6featuresDescriptor {
   }
 
   list() {
-    this.factory.getInstance('Constants')
-    this.factory.getInstance('Scoping')
-    this.factory.getInstance('ArrowFunctions')
-    this.factory.getInstance('ExtendedParameterHandling')
-    this.factory.getInstance('TemplateLiterals')
+    var self = this;
+    this.features.forEach(function(featureName){
+      self.factory.getInstance(featureName);
+    });
   }
 }

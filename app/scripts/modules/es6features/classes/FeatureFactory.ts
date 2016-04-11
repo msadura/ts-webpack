@@ -1,4 +1,4 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {FeatureInterface} from "./features/FeatureInterface";
 
 export class FeatureFactory {
   static basePath: string = './features/';

@@ -4,7 +4,7 @@ import {ArrowFunctions} from "./classes/features/ArrowFunctions";
 import {ExtendedParameterHandling} from "./classes/features/ExtendedParameterHandling";
 import {TemplateLiterals} from "./classes/features/TemplateLiterals";
 
-import {ES6featuresDescriptor} from "./classes/es6featuresDescriptor"
+import {ES6featuresDescriptor} from "./classes/ES6featuresDescriptor"
 
 import {FeatureFactory} from "./classes/FeatureFactory";
 
