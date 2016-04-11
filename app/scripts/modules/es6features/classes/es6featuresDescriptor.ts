@@ -1,10 +1,4 @@
-import {Constants} from "./features/Constants";
-import {Scoping} from "./features/Scoping";
-import {ArrowFunctions} from "./features/ArrowFunctions";
-import {ExtendedParameterHandling} from "./features/ExtendedParameterHandling";
-import {TemplateLiterals} from "./features/TemplateLiterals";
 import {FeatureFactory} from "./FeatureFactory";
-
 
 export class ES6featuresDescriptor {
   features: string[] = [
@@ -12,7 +6,13 @@ export class ES6featuresDescriptor {
     'Scoping',
     'ArrowFunctions',
     'ExtendedParameterHandling',
-    'TemplateLiterals'
+    'TemplateLiterals',
+    'ExtendedLiterals',
+    'EnchancedRegularExpression',
+    'EnchancedObjectProperties',
+    'DestructuringAssignment',
+    'Modules',
+    'Classes'
   ]
   factory: FeatureFactory
 
@@ -21,9 +21,8 @@ export class ES6featuresDescriptor {
   }
 
   list() {
-    var self = this;
-    this.features.forEach(function(featureName){
-      self.factory.getInstance(featureName);
+    this.features.forEach((featureName) => {
+      this.factory.getInstance(featureName);
     });
   }
 }

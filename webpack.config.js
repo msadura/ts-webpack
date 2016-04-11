@@ -50,7 +50,7 @@ module.exports = {
         }
       },
       {
-        test: /\.ts?$/,
+        test: /\.t?ts$/,
         include: [
           __appDir
         ],
