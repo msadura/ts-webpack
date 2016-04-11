@@ -24,23 +24,38 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/**/*.spec.js'
+      'app/**/*.spec.js',
+      'app/**/*.spec.ts'
     ],
 
 
     // list of preprocessors
     preprocessors: {
-      'app/**/*_test.js': ['webpack']
+      'app/**/*.spec.js': ['webpack'],
+      'app/**/*.spec.ts': ['webpack']
     },
 
 
     webpack: {
+      entry: [
+        "./jasmine-polyfill.ts"
+      ],
+
       resolve: {
-        extensions: ["", ".js", ".jsx"]
+        extensions: ["", ".js", ".jsx", ".ts", ".tsx", ".css", ".scss"]
       },
       module: {
         loaders: [
-          { test: /\.jsx/, loader: "babel" }
+          {
+            test: /\.css$/,
+            loader: "style!css"
+          },
+          {
+            test: /\.scss$/,
+            loader: "style!css!sass"
+          },
+          { test: /\.jsx?/, loader: "babel?presets[]=es2015" },
+          { test: /\.tsx?/, loader: "ts-loader" }
         ]
       }
     },
@@ -101,6 +116,7 @@ module.exports = function(config) {
       require("karma-jasmine"),
       require("karma-spec-reporter"),
       require("karma-phantomjs-launcher"),
+      require("karma-webpack")
       // require("../")
     ]
   });
