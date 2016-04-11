@@ -1,6 +1,9 @@
-//  hack - we are declaring this to let WebPack work properly
-declare function require(module: string):any
 
-require("./modules/main/module.ts");
-require("./modules/moduleName/module.ts");
+
+
+require("./modules/main/module");
+require("./modules/moduleName/module");
+require("./modules/es6features/module");
+
+// import {ES6} from './modules/es6features/module';
 

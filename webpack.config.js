@@ -24,6 +24,10 @@ module.exports = {
     contentBase: __appDir
   },
 
+  node: {
+//    fs: "empty"
+  },
+
   module: {
     loaders: [
       {

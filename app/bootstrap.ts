@@ -1,1 +1,3 @@
-require('./scripts/app');
+declare function require(module: string): string
+
+require('./scripts/app')

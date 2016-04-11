@@ -1,3 +1,4 @@
-require('./style');
+require('./style')
 
-import {Config} from './config';
+import {Config} from './config'
+
