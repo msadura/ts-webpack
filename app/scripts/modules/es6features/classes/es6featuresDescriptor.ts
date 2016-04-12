@@ -24,19 +24,19 @@ export class ES6featuresDescriptor {
   ) {}
 
 
-  run (featureNames?: string[]): any {
-    let ret: any = {};
+  run (featureNames?: string[]): { [key:string]: { [key:string]: string; }; } {
+    let ret: any = {}
     let listedFeatures: string[] = (featureNames) ? featureNames : this.features
     listedFeatures.forEach((featureName) => {
       ret[featureName] = this.factory.getInstance(featureName).run();
-    });
-    return ret;
+    })
+    return ret
   }
 
 
   list (featureNames?: string[]): void {
     this.log(" ==== ES6 Features ==== ")
-    let log = this.run(featureNames);
+    let log = this.run(featureNames)
     this.log(log);
   }
 
@@ -45,6 +45,6 @@ export class ES6featuresDescriptor {
     if (!this.logger) {
       return false
     }
-    this.logger.log(log);
+    this.logger.log(log)
   }
 }

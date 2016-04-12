@@ -1,6 +1,8 @@
 export abstract class AbstractFeature {
-  run() {
-    let ret: string[] = [];
+
+  public run(): { [key:string]: string; } {
+    let ret: any = {};
+
     Object.keys(this.constructor.prototype).forEach((methodName) => {
       if (methodName === "run") {
         return;
@@ -14,4 +16,5 @@ export abstract class AbstractFeature {
     });
     return ret;
   }
+
 }

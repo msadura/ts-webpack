@@ -5,6 +5,8 @@ export abstract class AbstractLogger {
   public log(logObj: any): void {
     this.display(logObj.length ? logObj : this.format(logObj));
   }
-  protected abstract format(logObj: any): string
-  protected abstract display(formattedLog: string): void
+
+
+  protected abstract format(logObj: { [key:string]: string[]; }): string
+  protected abstract display(formattedLog): void
 }

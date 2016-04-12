@@ -4,7 +4,8 @@ export class ScreenLogger extends AbstractLogger {
   protected static newline: string = "<br/>"
   protected static space: string = "&nbsp;"
 
-  protected format(log: any): string {
+
+  protected format(log): string {
     let consoleMessage: string = '';
     Object.keys(log).forEach((featureName) => {
       consoleMessage += `${ScreenLogger.newline} Feature: ${featureName} ${ScreenLogger.newline}`;
@@ -18,7 +19,9 @@ export class ScreenLogger extends AbstractLogger {
     return consoleMessage;
   };
 
-  protected display(formattedLog: string): void {
+  protected display(formattedLog: string): void
+  protected display(formattedLog: string[]): void
+  protected display(formattedLog): void {
     document.write(formattedLog);
   }
 }
