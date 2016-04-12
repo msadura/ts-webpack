@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class EnchancedRegularExpression implements FeatureInterface {
-  constructor() {
+  run() {
     // it more or less works but makes browser freeze, for some reason
     // this.regularExpressionStickyMatching();
   }

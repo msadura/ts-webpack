@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class TemplateLiterals implements FeatureInterface {
-  constructor() {
+  run() {
     this.stringInterpolation()
     this.customInterpolation()
     this.rawStringAccess()

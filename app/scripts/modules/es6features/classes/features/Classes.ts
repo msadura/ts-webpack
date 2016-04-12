@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class Classes implements FeatureInterface {
-  constructor() {
+  run() {
     this.classDefinition()
     this.classInheritance()
     this.classInheritanceFromExpression()

@@ -1,14 +1,14 @@
 import {FeatureInterface} from "./features/FeatureInterface";
 
 export class FeatureFactory {
-  static basePath: string = './features/';
+  private static basePath: string = './features/';
 
-  getInstance(featureGroupName: string): FeatureInterface {
-    let featureClass = require(FeatureFactory.getFeatureGroupPath(featureGroupName));
-    return new featureClass[featureGroupName]();
+  public getInstance(featureClassName: string): FeatureInterface {
+    let featureClass = require(FeatureFactory.getFeatureClassPath(featureClassName));
+    return new featureClass[featureClassName]();
   }
 
-  static getFeatureGroupPath(featureGroupName: String): string {
+  private static getFeatureClassPath(featureGroupName: string): string {
     return FeatureFactory.basePath + featureGroupName;
   }
 }

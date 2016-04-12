@@ -1,7 +1,7 @@
 import {FeatureFactory} from "./FeatureFactory";
 
 export class ES6featuresDescriptor {
-  features: string[] = [
+  private features: string[] = [
     'Constants',
     'Scoping',
     'ArrowFunctions',
@@ -14,15 +14,14 @@ export class ES6featuresDescriptor {
     'Modules',
     'Classes'
   ]
-  factory: FeatureFactory
 
-  constructor(factory: FeatureFactory) {
-    this.factory = factory;
-  }
+  // in this way we declare class property and set its value
+  constructor(private factory: FeatureFactory) {}
 
-  list() {
-    this.features.forEach((featureName) => {
-      this.factory.getInstance(featureName);
+  list(featureNames?: string[]): any {
+    let listedFeatures: string[] = (featureNames) ? featureNames : this.features
+    listedFeatures.forEach((featureName) => {
+      this.factory.getInstance(featureName).run();
     });
   }
 }

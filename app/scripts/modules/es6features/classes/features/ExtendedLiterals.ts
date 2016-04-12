@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class ExtendedLiterals implements FeatureInterface{
-  constructor() {
+  run() {
     this.binaryAndOctalLiteral()
     this.unicodeStringAndRegexpLiteral()
   }

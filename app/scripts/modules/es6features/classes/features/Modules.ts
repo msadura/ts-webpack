@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class Modules implements FeatureInterface {
-  constructor() {
+  run() {
     this.valueExportImport()
     this.defaultAndWildcard()
   }

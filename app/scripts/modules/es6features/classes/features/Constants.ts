@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class Constants implements FeatureInterface {
-  constructor() {
+  run() {
     this.constants();
   }
 

@@ -4,7 +4,7 @@ export class ArrowFunctions implements FeatureInterface {
   nums: Array<number>
   fives: Array<number>
 
-  constructor() {
+  run() {
     this.expressionBodies()
     this.statementBodies()
   }

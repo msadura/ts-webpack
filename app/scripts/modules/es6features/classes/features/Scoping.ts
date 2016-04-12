@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class Scoping implements FeatureInterface {
-  constructor() {
+  run() {
     this.blockScopedFunctions();
     this.blockScopedVariables();
   }

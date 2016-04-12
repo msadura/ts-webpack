@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class ExtendedParameterHandling implements FeatureInterface {
-  constructor() {
+  run() {
     this.defaultParameterValues()
     this.restParameter()
     this.spreadOperator()

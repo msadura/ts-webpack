@@ -1,7 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
 
 export class EnchancedObjectProperties implements FeatureInterface {
-  constructor() {
+  run() {
     this.propertyShorthand()
     this.computedPropertyNames()
     this.methodProperties()
