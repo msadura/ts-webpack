@@ -9,7 +9,7 @@ export class TemplateLiterals extends AbstractFeature {
 want to buy ${card.amount} ${card.product} for
 a total of ${card.amount * card.unitprice} bucks?`
 
-    document.write('\n' + message);
+    //document.write('\n' + message);
   }
 
   customInterpolation() {

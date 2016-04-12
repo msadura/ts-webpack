@@ -22,7 +22,7 @@ export class EnchancedRegularExpression extends AbstractFeature {
     }
 
     let report = (match) => {
-      console.log(JSON.stringify(match))
+      // console.log(JSON.stringify(match))
     }
     parser("Foo 1 Bar 7 Baz 42", [
       { pattern: /^Foo\s+(\d+)/y, action: (match) => report(match) },

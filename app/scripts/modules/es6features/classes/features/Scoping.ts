@@ -16,11 +16,13 @@ export class Scoping extends AbstractFeature {
     for (let i = 0; i <= 2; i++) {
       callbacks[i] = function () { return i * 2 }
     }
+    /*
     document.write(
       (callbacks[0]() === 0).toString(),
       (callbacks[1]() === 2).toString(),
       (callbacks[2]() === 4).toString()
     );
+    */
   }
 
   blockScopedFunctions() {

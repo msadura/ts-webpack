@@ -1,4 +1,5 @@
 import {FeatureFactory} from "./FeatureFactory";
+import {AbstractLogger} from "../../logger/module"
 
 export class ES6featuresDescriptor {
   private features: string[] = [
@@ -15,11 +16,16 @@ export class ES6featuresDescriptor {
     'Classes'
   ]
 
+
   // in this way we declare class property and set its value
-  constructor(private factory: FeatureFactory) {}
+  constructor(
+    private factory: FeatureFactory,
+    private logger?: AbstractLogger
+  ) {}
+
 
   run (featureNames?: string[]): any {
-    let ret: any[] = [];
+    let ret: any = {};
     let listedFeatures: string[] = (featureNames) ? featureNames : this.features
     listedFeatures.forEach((featureName) => {
       ret[featureName] = this.factory.getInstance(featureName).run();
@@ -27,22 +33,18 @@ export class ES6featuresDescriptor {
     return ret;
   }
 
-  list (featureNames?: string[]): any {
-    let log = this.run(featureNames);
 
+  list (featureNames?: string[]): void {
+    this.log(" ==== ES6 Features ==== ")
+    let log = this.run(featureNames);
     this.log(log);
   }
 
-  log (log: any[]) {
-    Object.keys(log).forEach((featureName) => {
-      let consoleMessage = `\nFeature: ${featureName}\n`;
-      if (typeof log[featureName] !== "object") {
-        return;
-      }
-      Object.keys(log[featureName]).forEach((subfeatureName) => {
-        consoleMessage += '  |- ' + subfeatureName + '\n'
-      })
-      console.log(consoleMessage);
-    });
+
+  log (log: any) {
+    if (!this.logger) {
+      return false
+    }
+    this.logger.log(log);
   }
 }
