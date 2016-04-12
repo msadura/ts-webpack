@@ -1,4 +1,3 @@
-import {FeatureInterface} from "./FeatureInterface";
 import {AbstractFeature} from "./AbstractFeature";
 
 export class Modules extends AbstractFeature {
