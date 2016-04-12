@@ -1,11 +1,6 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class ExtendedParameterHandling implements FeatureInterface {
-  run() {
-    this.defaultParameterValues()
-    this.restParameter()
-    this.spreadOperator()
-  }
+export class ExtendedParameterHandling extends AbstractFeature {
 
   defaultParameterValues() {
     function f (x, y = 7, z = 42) {

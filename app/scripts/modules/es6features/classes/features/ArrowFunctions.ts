@@ -1,13 +1,8 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class ArrowFunctions implements FeatureInterface {
-  nums: Array<number>
-  fives: Array<number>
-
-  run() {
-    this.expressionBodies()
-    this.statementBodies()
-  }
+export class ArrowFunctions extends AbstractFeature {
+  nums: Array<number> = [];
+  fives: Array<number> = [];
 
   expressionBodies() {
     let evens = new Array(3)

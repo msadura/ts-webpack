@@ -1,10 +1,6 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class ExtendedLiterals implements FeatureInterface{
-  run() {
-    this.binaryAndOctalLiteral()
-    this.unicodeStringAndRegexpLiteral()
-  }
+export class ExtendedLiterals extends AbstractFeature {
 
   binaryAndOctalLiteral() {
     0b111110111 === 503

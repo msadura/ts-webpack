@@ -1,11 +1,6 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class EnchancedObjectProperties implements FeatureInterface {
-  run() {
-    this.propertyShorthand()
-    this.computedPropertyNames()
-    this.methodProperties()
-  }
+export class EnchancedObjectProperties extends AbstractFeature {
 
   propertyShorthand() {
     let x, y

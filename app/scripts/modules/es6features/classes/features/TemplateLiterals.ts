@@ -1,11 +1,6 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class TemplateLiterals implements FeatureInterface {
-  run() {
-    this.stringInterpolation()
-    this.customInterpolation()
-    this.rawStringAccess()
-  }
+export class TemplateLiterals extends AbstractFeature {
 
   stringInterpolation(): any {
     var customer = { name: "Foo" }

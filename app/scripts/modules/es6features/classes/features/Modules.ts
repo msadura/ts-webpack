@@ -1,10 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class Modules implements FeatureInterface {
-  run() {
-    this.valueExportImport()
-    this.defaultAndWildcard()
-  }
+export class Modules extends AbstractFeature {
 
   valueExportImport() {
 /*

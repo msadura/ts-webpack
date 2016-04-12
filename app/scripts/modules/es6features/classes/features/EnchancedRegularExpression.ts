@@ -1,12 +1,12 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class EnchancedRegularExpression implements FeatureInterface {
-  run() {
-    // it more or less works but makes browser freeze, for some reason
-    // this.regularExpressionStickyMatching();
-  }
+export class EnchancedRegularExpression extends AbstractFeature {
 
   regularExpressionStickyMatching() {
+    if (1) {
+      throw Error('it more or less works but makes browser freeze, for some reason');
+    }
+
     let parser = (input, match) => {
       for (let pos = 0, lastPos = input.length; pos < lastPos; ) {
         for (let i = 0; i < match.length; i++) {

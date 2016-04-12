@@ -1,14 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class DestructuringAssignment implements FeatureInterface {
-  run() {
-    this.arrayMatching()
-    this.objectMatchingShorthandNotation()
-    this.objectMatchingDeepMatching()
-    this.parameterContetMatching()
-    this.failSoftDestructuring()
-  }
-
+export class DestructuringAssignment extends AbstractFeature {
 
   arrayMatching() {
     var list = [ 1, 2, 3 ]
@@ -31,13 +24,13 @@ export class DestructuringAssignment implements FeatureInterface {
 
   parameterContetMatching() {
     function f ([ name, val ]) {
-      console.log(name, val)
+      //console.log(name, val)
     }
     function g ({ name: n, val: v }) {
-      console.log(n, v)
+      //console.log(n, v)
     }
     function h ({ name, val }) {
-      console.log(name, val)
+      //console.log(name, val)
     }
     f([ "bar", 42 ])
     g({ name: "foo", val:  7 })
@@ -54,14 +47,14 @@ export class DestructuringAssignment implements FeatureInterface {
     d === undefined
 
     let [first] = [1, 2, 3, 4]
-    console.log(first)
+    // console.log(first)
     let [, second, , fourth] = [1, 2, 3, 4]
-    console.log(second, fourth)
+    //console.log(second, fourth)
 
     let input: string[] = ['first', 'second']
     function f([first, second]: string[]) {
-      console.log(first)
-      console.log(second)
+      //console.log(first)
+      //console.log(second)
     }
     f(input)
   }

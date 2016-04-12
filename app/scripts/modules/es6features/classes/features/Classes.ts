@@ -1,12 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class Classes implements FeatureInterface {
-  run() {
-    this.classDefinition()
-    this.classInheritance()
-    this.classInheritanceFromExpression()
-  }
-
+export class Classes extends AbstractFeature {
 
   classDefinition() {
     class Shape {

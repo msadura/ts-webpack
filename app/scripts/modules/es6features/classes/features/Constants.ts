@@ -1,12 +1,8 @@
-import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class Constants implements FeatureInterface {
-  run() {
-    this.constants();
-  }
-
+export class Constants extends AbstractFeature {
   constants(): any {
     const stala = 1
-    document.write("\n".concat(stala.toString()));
+    return "\n".concat(stala.toString());
   }
 }

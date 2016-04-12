@@ -1,10 +1,7 @@
 import {FeatureInterface} from "./FeatureInterface";
+import {AbstractFeature} from "./AbstractFeature";
 
-export class Scoping implements FeatureInterface {
-  run() {
-    this.blockScopedFunctions();
-    this.blockScopedVariables();
-  }
+export class Scoping extends AbstractFeature {
 
   blockScopedVariables() {
     let a = [1,2,3,4]
