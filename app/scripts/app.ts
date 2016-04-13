@@ -1,7 +1,9 @@
+import {ES6featureDescriptorAdapter} from "./modules/es6features/module"
+import {ConsoleLogger, ScreenLogger} from "./modules/logger/module"
 
-require("./modules/main/module");
-require("./modules/moduleName/module");
-require("./modules/es6features/module");
+new ES6featureDescriptorAdapter(
+  new ScreenLogger()
+).list()
 
 
 

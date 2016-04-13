@@ -1,9 +1,9 @@
 import {FeatureFactory} from "./FeatureFactory";
 import {LoggerInterface} from "./LoggerInterface"
 
-export { ES6featuresDescriptor }
+export { ES6featureDescriptor }
 
-class ES6featuresDescriptor {
+class ES6featureDescriptor {
   private features: string[] = [
     'Constants',
     'Scoping',
