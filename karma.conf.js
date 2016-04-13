@@ -38,7 +38,7 @@ module.exports = function(config) {
 
     webpack: {
       entry: [
-        "./jasmine-polyfill.ts"
+        "./jasmine-main.ts"
       ],
 
       resolve: {
