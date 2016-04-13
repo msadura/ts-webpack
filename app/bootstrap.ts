@@ -1,3 +1,3 @@
-declare function require(module: string): string
+/// <reference path="node.d.ts" />
 
 require('./scripts/app')
