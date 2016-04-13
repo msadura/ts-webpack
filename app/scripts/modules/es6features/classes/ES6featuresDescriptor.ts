@@ -1,5 +1,5 @@
 import {FeatureFactory} from "./FeatureFactory";
-import {AbstractLogger} from "../../logger/module"
+import {LoggerInterface} from "./LoggerInterface"
 
 export { ES6featuresDescriptor }
 
@@ -22,7 +22,7 @@ class ES6featuresDescriptor {
   // in this way we declare class property and set its value
   constructor(
     private factory: FeatureFactory,
-    private logger?: AbstractLogger
+    private logger?: LoggerInterface
   ) {}
 
 
