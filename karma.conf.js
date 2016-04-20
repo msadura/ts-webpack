@@ -1,33 +1,19 @@
 // Karma configuration
-
 var webpack = require("webpack");
+var webpackConfig = require('./webpack.config');
+webpackConfig.entry = {};
 
-var configSettings = {
-  "normal": {},
-  "uglified": {
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin()
-    ]
-  }
-};
-
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-
     // base path, that will be used to resolve files and exclude
     basePath: '',
-
-
     // frameworks to use
     frameworks: ['jasmine'],
-
-
     // list of files / patterns to load in the browser
     files: [
       'app/**/*.spec.js',
       'app/**/*.spec.ts'
     ],
-
 
     // list of preprocessors
     preprocessors: {
@@ -35,51 +21,25 @@ module.exports = function(config) {
       'app/**/*.spec.ts': ['webpack']
     },
 
-
     webpack: {
       entry: [
         "./jasmine-main.ts"
       ],
-
-      resolve: {
-        extensions: ["", ".js", ".jsx", ".ts", ".tsx", ".css", ".scss"]
-      },
-      module: {
-        loaders: [
-          {
-            test: /\.css$/,
-            loader: "style!css"
-          },
-          {
-            test: /\.scss$/,
-            loader: "style!css!sass"
-          },
-          { test: /\.jsx?/, loader: "babel?presets[]=es2015" },
-          { test: /\.tsx?/, loader: "ts-loader" }
-        ]
-      }
+      resolve: webpackConfig.resolve,
+      module: webpackConfig.module
     },
-
-
     webpackMiddleware: {
       stats: {
         colors: true
       }
     },
-
-
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
     reporters: ['spec'],
-
-
     // web server port
     port: 9876,
-
-
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
@@ -88,7 +48,6 @@ module.exports = function(config) {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-
 
     // Start these browsers, currently available:
     // - Chrome
@@ -103,8 +62,6 @@ module.exports = function(config) {
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
-
-
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: true,
@@ -117,7 +74,6 @@ module.exports = function(config) {
       require("karma-spec-reporter"),
       require("karma-phantomjs-launcher"),
       require("karma-webpack")
-      // require("../")
     ]
   });
 };
