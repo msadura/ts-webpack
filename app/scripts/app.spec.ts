@@ -7,16 +7,19 @@ declare function expect(name: string, callback: Function): void
 
 // require("node_modules/jasmine/bin/jasmine.js")
 
+var chai = require('chai');
+var expect = chai.expect;
+
 describe('testing main.js', function() {
   beforeEach(function(){
     var main = require('./app.ts');
   });
 
   it ('should be true', function(){
-    expect(true).toBe(true);
+    expect(true).to.equal(true);
   });
 
   it ('should be false', function(){
-    expect(false).toBe(false);
+    expect(false).to.equal(false);
   });
 });

@@ -39,7 +39,7 @@ module.exports = {
         loader: "style!css!sass"
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js(x?)$/,
         include: [
           __appDir
         ],
@@ -50,11 +50,11 @@ module.exports = {
         }
       },
       {
-        test: /\.t?ts$/,
+        test: /\.ts(x?)$/,
         include: [
           __appDir
         ],
-        loader: 'ts-loader'
+        loader: 'babel-loader?presets[]=es2015!ts-loader'
       }
     ]
   }

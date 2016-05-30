@@ -8,7 +8,7 @@ module.exports = function (config) {
     // base path, that will be used to resolve files and exclude
     basePath: '',
     // frameworks to use
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai', 'sinon'],
     // list of files / patterns to load in the browser
     files: [
       'app/**/*.spec.js',
@@ -21,13 +21,7 @@ module.exports = function (config) {
       'app/**/*.spec.ts': ['webpack']
     },
 
-    webpack: {
-      entry: [
-        "./jasmine-main.ts"
-      ],
-      resolve: webpackConfig.resolve,
-      module: webpackConfig.module
-    },
+    webpack: webpackConfig,
     webpackMiddleware: {
       stats: {
         colors: true
@@ -64,16 +58,7 @@ module.exports = function (config) {
     captureTimeout: 60000,
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true,
+    singleRun: true
 
-
-    // List plugins explicitly, since autoloading karma-webpack
-    // won't work here
-    plugins: [
-      require("karma-jasmine"),
-      require("karma-spec-reporter"),
-      require("karma-phantomjs-launcher"),
-      require("karma-webpack")
-    ]
   });
 };

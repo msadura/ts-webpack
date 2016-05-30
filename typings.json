@@ -1,0 +1,12 @@
+{
+  "name": "bls-ts-webpack",
+  "version": false,
+  "globalDependencies": {
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#db3a54c801e29e73bdaae327a64ed7991778c958",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232",
+    "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232",
+    "promises-a-plus": "github:DefinitelyTyped/DefinitelyTyped/promises-a-plus/promises-a-plus.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232",
+    "chai-as-promised": "github:DefinitelyTyped/DefinitelyTyped/chai-as-promised/chai-as-promised.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232",
+    "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232"
+  }
+}
